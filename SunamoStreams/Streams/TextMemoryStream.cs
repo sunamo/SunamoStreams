@@ -1,16 +1,30 @@
 namespace SunamoStreams.Streams;
 
+/// <summary>
+/// Represents the text memory stream type.
+/// </summary>
 public class TextMemoryStream
 {
+    /// <summary>
+    /// Gets or sets the line.
+    /// </summary>
     public StringBuilder Line { get; set; } = new StringBuilder();
     private string? filePath = null;
     private string? initialPath = null;
 
+    /// <summary>
+    /// Text memory stream.
+    /// </summary>
+    /// <param name="path">The path.</param>
+    /// <returns>The text memory stream result.</returns>
     public TextMemoryStream(string path)
     {
         initialPath = path;
     }
 
+    /// <summary>
+    /// Init.
+    /// </summary>
     public
     async Task
         Init()
@@ -27,6 +41,9 @@ public class TextMemoryStream
         Line.Append(content);
     }
 
+    /// <summary>
+    /// Save.
+    /// </summary>
     public
     async Task
  Save()
